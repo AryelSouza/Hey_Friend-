@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntertainTalk - Discuss Movies, Games, and More!</title>
+    <link rel="stylesheet" href="index-css.css"> <!-- Importa o arquivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">EntertainTalk</a>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Explore</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Messages</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <aside class="sidebar">
+                <div class="trending">
+                    <h2>Trending Topics</h2>
+                    <ul>
+                        <li><a href="#">#Inception</a></li>
+                        <li><a href="#">#GodOfWar</a></li>
+                        <li><a href="#">#StrangerThings</a></li>
+                        <li><a href="#">#MarvelPhase5</a></li>
+                        <li><a href="#">#E3Gaming</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="content">
+                <div class="post-form">
+                    <textarea id="new-post-content" placeholder="What's happening in entertainment?" rows="3"></textarea>
+                    <button id="post-button">Post</button>
+                </div>
+                <div id="posts-container">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="post.js"></script> <!-- Importa o arquivo JavaScript -->
+</body>
+</html>
