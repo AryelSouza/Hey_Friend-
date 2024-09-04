@@ -1,29 +1,5 @@
-import mysql from 'mysql2/promise';
-
 // Dados iniciais dos posts
-let posts = [
-    
-];
-// criando conexão com o BD
-
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'minhasenha123',
-    database: 'HeyFriend'
-  });
-  console.log('Pool de conexões criado:', pool);
-
-  
-  async function adicionarUsuario(nome, senha) {
-    try {
-      const [results] = await pool.execute('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
-      console.log('Usuário adicionado com sucesso!');
-    } catch (error) {
-      console.error('Erro ao adicionar usuário:', error);
-    }
-  }
-  
+let posts = [];
 
 // Função para criar um elemento HTML de post
 function createPostElement(post) {
@@ -68,10 +44,23 @@ function addNewPost(content) {
         likes: 0,
         comments: 0,
         retweets: 0
-        
     };
     posts.unshift(newPost);
     renderPosts();
+
+    // Envia o novo post para o servidor
+    fetch('/add-post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nome: 'Maria da Silva',
+            senha: 'senha123',
+            content: content
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error('Erro:', error));
 }
 
 // Função para lidar com o clique no botão de curtir
@@ -88,7 +77,6 @@ document.getElementById('post-button').addEventListener('click', () => {
     const content = document.getElementById('new-post-content').value;
     if (content.trim()) {
         addNewPost(content);
-        adicionarUsuario('Maria da Silva', 'senha123');
         document.getElementById('new-post-content').value = '';
     }
 });
