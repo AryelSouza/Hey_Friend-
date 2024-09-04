@@ -1,33 +1,29 @@
+import mysql from 'mysql2/promise';
+
 // Dados iniciais dos posts
 let posts = [
-    {
-        id: 1,
-        user: "Movie Buff",
-        username: "@moviebuff123",
-        content: "Just watched Inception - Mind blown! Christopher Nolan does it again! The plot twists, the visuals, the soundtrack - everything was perfect. What did you guys think about the ending? Let's discuss!",
-        likes: 296,
-        comments: 42,
-        retweets: 128
-    },
-    {
-        id: 2,
-        user: "Gamer Girl",
-        username: "@gamergirl456",
-        content: "New God of War game announced! Just saw the trailer and the graphics look insane. The story seems to be taking an interesting turn. Who's excited to play it?",
-        likes: 512,
-        comments: 78,
-        retweets: 256
-    },
-    {
-        id: 3,
-        user: "Binge Watcher",
-        username: "@bingewatcher789",
-        content: "Stranger Things Season 5 theories: After that cliffhanger in Season 4, I can't stop thinking about what might happen next. Any theories on how they'll defeat Vecna? Will Eleven's powers be enough?",
-        likes: 421,
-        comments: 103,
-        retweets: 189
-    }
+    
 ];
+// criando conexão com o BD
+
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'minhasenha123',
+    database: 'HeyFriend'
+  });
+  console.log('Pool de conexões criado:', pool);
+
+  
+  async function adicionarUsuario(nome, senha) {
+    try {
+      const [results] = await pool.execute('INSERT INTO usuarios (nome, senha) VALUES (?, ?)', [nome, senha]);
+      console.log('Usuário adicionado com sucesso!');
+    } catch (error) {
+      console.error('Erro ao adicionar usuário:', error);
+    }
+  }
+  
 
 // Função para criar um elemento HTML de post
 function createPostElement(post) {
@@ -72,6 +68,7 @@ function addNewPost(content) {
         likes: 0,
         comments: 0,
         retweets: 0
+        
     };
     posts.unshift(newPost);
     renderPosts();
@@ -91,6 +88,7 @@ document.getElementById('post-button').addEventListener('click', () => {
     const content = document.getElementById('new-post-content').value;
     if (content.trim()) {
         addNewPost(content);
+        adicionarUsuario('Maria da Silva', 'senha123');
         document.getElementById('new-post-content').value = '';
     }
 });
