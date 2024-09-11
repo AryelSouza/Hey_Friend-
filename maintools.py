@@ -57,7 +57,7 @@ class Orm:
         self.con.commit()
         self.con.close()
 
-    def create_table(self, query_sql: str) -> None:
+    def query_sql(self, query_sql: str) -> None:
         """Cria uma table com o nome desejado."""
         self.cur.execute(query_sql)
 
@@ -179,6 +179,8 @@ class Orm:
         #(len(values.keys()) *'?,')[0:-1] - retorner N * '?,'
         #[0:-1] - retira aa vigula no final da sting
         #[tuple(values.values())] - retun lista com uma dupla de valores
+        if 'typeform' in values.keys():
+            del values['typeform']
         args: str = (len(values.keys()) *'?,')[0:-1]
         self.cur.executemany(f'''
             insert into {name_table}
@@ -313,6 +315,10 @@ class ToolsSocket:
             chave, valor = par.split('=')
             resultado[chave] = valor
         return resultado
+
+    def get_method(request: str) -> str:
+        # retorna uma string com o emthod desejado
+        return request.split()[1]
                     
     def cacel_client(conn):
         # evitar erro de falha na conexao do client, erro request vazio
