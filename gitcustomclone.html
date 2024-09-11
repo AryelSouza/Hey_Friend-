@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>HTML 5 Boilerplate</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet"><!-- emoji --->
 		
 	</head>
 	<style>
@@ -25,7 +26,7 @@ body {
 
 
 /* POST CARD OPEN */
-#post{width:100%;height:100%;background-color:#0D1117;overflow:auto;}
+#post{width:100%;height:100%;background-color:#0D1117;overflow:auto;z-index:1;}
 
 
 
@@ -34,7 +35,7 @@ body {
   position: relative;
   background-color: #151B23;
   padding: 1em;
-  z-index: 5;
+  z-index: 3;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   max-width: 500px;
@@ -211,8 +212,200 @@ button:hover {
     background-color: #2a9d8f;
 }
 
+/* OPEN coment-float */
+#coment-float{
+	width:100%;
+	height:92.8%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position:absolute;
+	z-index:0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+}
 
 
+/* From Uiverse.io by ahmed150up */ 
+#coment-float .card {
+  width:900px;
+	z-index:0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+ #coment-float .chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+	display:flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+ #coment-float .chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+ #coment-float .message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ #coment-float .chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+ #coment-float .message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+ #coment-float .send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+ #coment-float .send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+/* CLOSE coment-float */
+
+/* OPEN login user */
+#login-user{
+	width:100%;
+	height:90%;
+	background-color:black;
+	opacity:0.6;
+	z-index:0;
+	position:absolute;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.form-container__sign-app-buttons svg {width: 22px;height: auto;}
+.google svg {width: 18px;height: auto;}
+.form-container {
+  width: 350px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #4b4b4b;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+	opacity:1.0;
+}
+
+.form-container:focus-within:not(:focus) {
+  box-shadow: 0 0 6px 3px #caedff;
+  -webkit-box-shadow: 0 0 6px 3px #caedff;
+  outline: 1px solid #97dbff;
+}
+.form-container p {font-size: 14px;font-weight: bold;margin-bottom: 14px;}
+.top-line {padding-top: 12px;}
+.form-container__form {display: flex;flex-direction: column;row-gap: 16px;}
+.form-container__form input {
+  height: 31px;
+  border: 1px solid #d9d9d9;
+  padding: 4px;
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-container__form input:focus {border-color: #00a6fd;outline: 0;box-shadow: none;}
+.form-container__register-buttons {display: flex;column-gap: 10px;}
+.form-container__sign {
+  padding: 8px 20px;
+  font-size: 14px;
+  line-height: 1.65;
+  border-radius: 20px;
+  width: 110px;
+  white-space: nowrap;
+  background-color: #00a6fd;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-container__sign:first-child:active,
+.form-container__sign:first-child:hover {background-color: #0099e9;}
+.form-container__sign:focus {outline-offset: -2px;outline: none;-webkit-box-shadow: inset 0 0 3px 1px #97dbff;box-shadow: inset 0 0 3px 1px #97dbff;}
+.forgot {
+  width: auto;
+  padding: 8px 0;
+  background: none;
+  font-weight: 400;
+  color: #428bca;
+  text-decoration: none;
+}
+.forgot:hover {text-decoration: underline;color: #4c9dd0;}
+.form-container__header {padding-bottom: 16px;}
+.form-container__footer {padding-top: 12px;border-top: 1px solid #cacaca;}
+.form-container__sign-app-buttons {display: flex;column-gap: 24px;}
+.form-container__sign-app-buttons button:not(:first-child) {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container__sign-app-buttons button:not(:first-child)::before {
+  position: absolute;
+  content: '';
+  width: 120%;
+  height: 2px;
+  background: rgb(187, 187, 187);
+  bottom: 0;
+  opacity: 0;
+}
+.form-container__sign-app-buttons button:not(:first-child):hover::before {opacity: 1;transition: 1s;}
+.form-container__sign-app-buttons button:not(:first-child):focus::before {opacity: 1;background-color: #4b4b4b;}
+
+.form-container__sign-app-buttons button:first-child {
+  justify-content: center;
+  min-width: 110px;
+  height: 40px;
+  border: none;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 1px #b7b7b7;
+  display: flex;
+  align-items: center;
+  color: #4b4b4b;
+  font-size: 13px;
+  column-gap: 15px;
+  cursor: pointer;
+}
+.form-container__sign-app-buttons button:first-child:active {background: #eeeeee;}
+.form-container__sign-app-buttons button:first-child:focus:not(:active) {outline: none;-webkit-box-shadow: inset 0 0 3px 1px #97dbff;box-shadow: inset 0 0 3px 1px #97dbff;}
+
+/* CLOSE login user */
 	</style>
 	<body>
 
@@ -221,13 +414,83 @@ button:hover {
 		<div id="container">
 
 			<div id="navtop">
+				<li style="display:flex;">
+					<button   style="width:40px; height:40px;display:flex;justify-content:center;align-items:center;border-radius:100%;margin:5px;" onclick="showformlogin()">
+						<img src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"style="width:40px; height:40px;border-radius:100%;">
+					</button> 
+					<div style="width:200%;height:50px;font-size:12px;margin-top:5px;color:gray;">
+						<h3>Name user</h3>
+						<p style="color:#2a317c;font-style:italic;">eduardofeio@gmail.com</p>
+					</div>
+				</li>
+
+				<div id="login-user">
+
+<div class="form-container" tabindex="0">
+  <div class="form-container__block">
+    <div class="form-container__header">
+      <p>Sign in with existing account</p>
+      <form action="/" method="post" class="form-container__form">
+        <input placeholder="Name" type="text">
+        <input placeholder="Email address or Username" type="email">
+        <input placeholder="Password" type="password">
+        <div class="form-container__register-buttons">
+          <button class="form-container__sign">Sign In</button>
+          <a class="form-container__sign forgot" href="#" onclick="showformloginhole()">EXIT</a>
+        </div>
+      </form>
+    </div>
+    <div class="form-container__footer">
+      <p class="top-line">Or sign in with:</p>
+      <div class="form-container__sign-app-buttons">
+        <button class="google"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path data-original="#167ee6" fill="#167ee6" d="m492.668 211.489-208.84-.01c-9.222 0-16.697 7.474-16.697 16.696v66.715c0 9.22 7.475 16.696 16.696 16.696h117.606c-12.878 33.421-36.914 61.41-67.58 79.194L384 477.589c80.442-46.523 128-128.152 128-219.53 0-13.011-.959-22.312-2.877-32.785-1.458-7.957-8.366-13.785-16.455-13.785z"></path>
+              <path data-original="#12b347" fill="#12b347" d="M256 411.826c-57.554 0-107.798-31.446-134.783-77.979l-86.806 50.034C78.586 460.443 161.34 512 256 512c46.437 0 90.254-12.503 128-34.292v-.119l-50.147-86.81c-22.938 13.304-49.482 21.047-77.853 21.047z"></path>
+              <path data-original="#0f993e" fill="#0f993e" d="M384 477.708v-.119l-50.147-86.81c-22.938 13.303-49.48 21.047-77.853 21.047V512c46.437 0 90.256-12.503 128-34.292z"></path>
+              <path class="" data-original="#ffd500" fill="#ffd500" d="M100.174 256c0-28.369 7.742-54.91 21.043-77.847l-86.806-50.034C12.502 165.746 0 209.444 0 256s12.502 90.254 34.411 127.881l86.806-50.034c-13.301-22.937-21.043-49.478-21.043-77.847z"></path>
+              <path class="" data-original="#ff4b26" fill="#ff4b26" d="M256 100.174c37.531 0 72.005 13.336 98.932 35.519 6.643 5.472 16.298 5.077 22.383-1.008l47.27-47.27c6.904-6.904 6.412-18.205-.963-24.603C378.507 23.673 319.807 0 256 0 161.34 0 78.586 51.557 34.411 128.119l86.806 50.034c26.985-46.533 77.229-77.979 134.783-77.979z"></path>
+              <path data-original="#d93f21" fill="#d93f21" d="M354.932 135.693c6.643 5.472 16.299 5.077 22.383-1.008l47.27-47.27c6.903-6.904 6.411-18.205-.963-24.603C378.507 23.672 319.807 0 256 0v100.174c37.53 0 72.005 13.336 98.932 35.519z"></path>
+            </g>
+          </svg><span>Google</span></button>
+        <button><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path class="" data-original="#000000" fill="#000000" d="M12 .5C5.37.5 0 5.78 0 12.292c0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56C20.565 21.917 24 17.495 24 12.292 24 5.78 18.627.5 12 .5z"></path>
+            </g>
+          </svg></button>
+        <button><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path data-original="#ffa100" fill="#ffa100" d="M29.653 201.648.957 289.816c-2.599 8.006.208 16.843 7.07 21.834l247.972 180.183-79.366-155.859-146.98-134.326zM482.347 201.648l28.696 88.168c2.599 8.006-.208 16.843-7.07 21.834L256.001 491.832l87.212-184.854 139.134-105.33z"></path>
+              <path class="" data-original="#ff6d18" fill="#ff6d18" d="m256 491.832-.001-178.6-94.302-111.585-65.97-32.822-66.074 32.822L256 491.832zM256 491.832l.001-189.402 94.302-100.783 71.367-32.822 60.677 32.822L256 491.832z"></path>
+              <path class="" data-original="#fc3819" fill="#fc3819" d="m256 491.832 94.302-290.185H161.698L256 491.832z"></path>
+              <path class="" data-original="#fc3819" fill="#fc3819" d="M29.654 201.65h132.148L104.929 26.874c-2.911-8.942-15.596-8.942-18.611 0L29.654 201.65zM482.346 201.65H350.198l56.769-174.776c2.911-8.942 15.596-8.942 18.611 0l56.768 174.776z"></path>
+            </g>
+          </svg></button>
+        <button><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path class="" data-original="#2684ff" fill="#2684ff" d="M16.436 25.814c-10.23 0-17.903 9.378-16.198 18.756l69.056 422.86c1.705 11.085 11.083 18.756 22.166 18.756h334.196c7.674 0 14.494-5.967 16.198-13.641l69.907-427.123c1.707-10.231-5.967-18.756-16.196-18.756l-479.129-.852zm293.275 305.21H203.143l-28.134-150.899H336.14l-26.429 150.899z"></path>
+              <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 -1 0 2434)" y2="2012.875" y1="2211.385" x2="270.312" x1="524.616" id="a">
+                <stop style="stop-color:#0052CC" offset=".176"></stop>
+                <stop style="stop-color:#2684FF" offset="1"></stop>
+              </linearGradient>
+              <path fill="" style="fill:url(#a);" d="M488.743 180.125H335.286L309.71 331.024H203.14L77.818 480.219s5.968 5.116 14.493 5.116h334.196c7.674 0 14.494-5.969 16.198-13.643l46.038-291.567z"></path>
+            </g>
+          </svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+				</div>
+
+
 			</div>
 
 
 			<div id="content-body">
 				<div id="column-1">
 
-					<div style="width:260px;height:92%;;position:absolute;z-index:1;border-right:1px solid #2a313c;">
+					<div style="width:260px;height:92%;;position:absolute;z-index:2;border-right:1px solid #2a313c;">
 						<div class="input">
 							<button class="value">
 								<svg data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m1.5 13v1a.5.5 0 0 0 .3379.4731 18.9718 18.9718 0 0 0 6.1621 1.0269 18.9629 18.9629 0 0 0 6.1621-1.0269.5.5 0 0 0 .3379-.4731v-1a6.5083 6.5083 0 0 0 -4.461-6.1676 3.5 3.5 0 1 0 -4.078 0 6.5083 6.5083 0 0 0 -4.461 6.1676zm4-9a2.5 2.5 0 1 1 2.5 2.5 2.5026 2.5026 0 0 1 -2.5-2.5zm2.5 3.5a5.5066 5.5066 0 0 1 5.5 5.5v.6392a18.08 18.08 0 0 1 -11 0v-.6392a5.5066 5.5066 0 0 1 5.5-5.5z" fill="#7D8590"></path></svg>
@@ -257,13 +520,59 @@ button:hover {
 					 {% for data in dados %}
 						<div class="card">
 								<div class="body">
-									<div style="width:100%;display:flex;justify-content:center;"><img src="{{ data[0] |replace('%2F','/') |replace('%3A',':')}}" width="450px" height="300px;"></div>
-									<p class="text">{{ data[1] }}</p><span class="username">from: @Yaya12085</span>
+										<div style="width:100%;display:flex;margin-bottom:20px;color:gray;">
+											<div style="width:45px;height:45px;margin-right:20px;border-radius:100%;background-color:gray;"></div>
+											<div style="width:200px;height:50px;font-size:14;">
+												<h3>Name user</h3>
+												<p style="color:#2a317c;font-style:italic;">01/09/2303</p>
+											</div>
+										</div>
+									<div style="width:100%;display:flex;justify-content:center;border:1px solid #2a313c;margin-bottom:20px;"><img src="{{ data[1] |replace('%2F','/') |replace('%3A',':')}}" width="450px" height="300px;"></div>
+									<p class="text">{{ data[4] }}</p><span class="username">from: @Yaya12085 </span>
 									 <div class="footer">
 								<div>
-									<div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"></path> </g></svg>18</div>
-									<div><svg fill="#000000" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-2.5 0 32 32"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path fill="#000000" d="M0 10.284l0.505 0.36c0.089 0.064 0.92 0.621 2.604 0.621 0.27 0 0.55-0.015 0.836-0.044 3.752 4.346 6.411 7.472 7.060 8.299-1.227 2.735-1.42 5.808-0.537 8.686l0.256 0.834 7.63-7.631 8.309 8.309 0.742-0.742-8.309-8.309 7.631-7.631-0.834-0.255c-2.829-0.868-5.986-0.672-8.686 0.537-0.825-0.648-3.942-3.3-8.28-7.044 0.11-0.669 0.23-2.183-0.575-3.441l-0.352-0.549-8.001 8.001zM1.729 10.039l6.032-6.033c0.385 1.122 0.090 2.319 0.086 2.334l-0.080 0.314 0.245 0.214c7.409 6.398 8.631 7.39 8.992 7.546l-0.002 0.006 0.195 0.058 0.185-0.087c2.257-1.079 4.903-1.378 7.343-0.836l-13.482 13.481c-0.55-2.47-0.262-5.045 0.837-7.342l0.104-0.218-0.098-0.221-0.031 0.013c-0.322-0.632-1.831-2.38-7.498-8.944l-0.185-0.215-0.282 0.038c-0.338 0.045-0.668 0.069-0.981 0.069-0.595 0-1.053-0.083-1.38-0.176z"> </path> </g></svg>7</div>
-									<div><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.1" d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z" fill="#323232"></path> <path opacity="0.1" d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z" fill="#323232"></path> <path opacity="0.1" d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z" fill="#323232"></path> <path d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z" stroke-width="2"></path> <path d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z" stroke-width="2"></path> <path d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z" stroke-width="2"></path> <path d="M8.7207 10.6397L15.0001 7.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8.70605 13.353L15 16.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>2</div>
+									<div>
+										<div style="width:150px;display:flex;justify-content:space-between;">
+
+
+										<form action="http://localhost:2000" method="post">
+											<input type="hidden" name="typeform" value="1">
+											<input type="hidden" name="postid" value="{{ data[0] }}">
+											<input id="sumlikesum1-{{ data[0] }}" type="hidden" name="like">
+											<input type="hidden" name="typeaction" value="like">
+											<div style="width:auto;display:flex;justify-content:space-between;">
+												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit">
+													👍
+												</button>
+												<span id="likesum1-{{ data[0] }}">{{ data[2] }}</span>
+											</div>
+										</form>
+
+										<form action="http://localhost:2000" method="post">
+											<input type="hidden" name="typeform" value="1">
+											<input type="hidden" name="postid" value="{{ data[0] }}">
+											<input id="sumdeslikesum1-{{ data[0] }}" type="hidden" name="deslike">
+											<input type="hidden" name="typeaction" value="deslike">
+											<div style="width:auto;display:flex;justify-content:space-between;">
+												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit">
+													👎
+												</button>
+												<span id="deslikesum1-{{ data[0] }}">{{ data[3] }}</span>
+											</div>
+										</form>
+
+											<div style="width:auto;display:flex;justify-content:space-between;">
+												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit" onclick="showcommetn();">
+													💬
+												</button>
+												<span>0</span>
+											</div>
+
+
+
+
+										</div>
+									</div>
 								</div>
 								
 								<div class="viewer">
@@ -291,12 +600,47 @@ button:hover {
 													<label for="comment">Seu comentário:</label>
 													<textarea id="comment" name="comment"placeholder="Escreva seu comentário aqui..." required></textarea>
 												</div>
-												<input type="hidden" name="tipoform" value="1">
+												<input type="hidden" name="typeform" value="0">
 										  <button type="submit">Postar</button>
 										</form>
 									</div>
 								</div>
 								<!-- CLOSE POST FORM -->
+
+
+
+							
+								<div id="coment-float"><!-- OPEN COMENT -->
+									<div class="card" id="card-cometn-flaot">
+										<div class="chat-header">Chat<button style="margin-left:400px;" onclick="showcommetnhole();">X</button></div>
+											<div class="chat-window">
+												<ul class="message-list">
+												{% for data in dadoscomentar %}
+													<li style="display:flex;">
+														<div style="width:105px;height:45px;margin-right:20px;border-radius:100%;background-color:gray;margin-bottom:10px;margin-top:10px;margin-left:10px;"></div>
+														<div style="width:200%;height:50px;font-size:14;margin-top:10px;">
+															<h3>Name user</h3>
+															<p style="color:#2a317c;font-style:italic;">{{ data[1] }}</p>
+														</div>
+													</li>
+												{% endfor %}
+												</ul>
+											</div>
+											<div class="chat-input">
+
+												<form action="http://localhost:2000" method="post">
+													<input type="hidden" name="typeform" value="1">
+													<input type="hidden" name="typeaction" value="comment">
+													<input type="hidden" name="postid" value="99999">
+													<input type="text" class="message-input" placeholder="Type your message here" name="comment">
+													<button type="submit" class="send-button">Send</button>
+												</form>
+											</div>
+										</div>
+								</div><!-- CLOSE COMENT -->
+
+
+
 				</div>
 			</div>
 
@@ -320,10 +664,42 @@ button:hover {
 
 
 
+		<script>
+{% for data in dados %}
+document.getElementById("sumlikesum1-{{ data[0] }}").value = document.getElementById("likesum1-{{ data[0] }}").innerHTML 
+document.getElementById("sumdeslikesum1-{{ data[0] }}").value = document.getElementById("deslikesum1-{{ data[0] }}").innerHTML 
+{% endfor %}
 
 
 
 
+
+
+
+
+
+        function showcommetn() {
+            const box1 = document.getElementById('coment-float');
+            const box2 = document.getElementById('card-cometn-flaot');
+            // Atribuir novo z-index
+            box1.style.zIndex = '1000'; // Aumentar o z-index de box1
+            box2.style.zIndex = '1001';  // Diminuir o z-index de box2
+        }
+        function showcommetnhole() {
+            const box1 = document.getElementById('coment-float');
+            // Atribuir novo z-index
+            box1.style.zIndex = '0'; // Aumentar o z-index de box1
+            box2.style.zIndex = '0';  // Diminuir o z-index de box2
+        }
+        function showformlogin() {
+            const box1 = document.getElementById('login-user');
+            box1.style.zIndex = '1000'; // Aumentar o z-index de box1
+        }
+				function showformloginhole() {
+            const box1 = document.getElementById('login-user');
+            box1.style.zIndex = '0'; // Aumentar o z-index de box1
+        }
+		</script>
 
 
 
