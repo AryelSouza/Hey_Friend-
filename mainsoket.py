@@ -1,7 +1,8 @@
 import socket
 import random
 import threading
-from os import makedirs
+import json
+from os import makedirs,path
 from jinja2 import Template
 from maintools import (
         Orm,
@@ -38,7 +39,8 @@ def server_post(HOST, PORT, BUFF): #method post que impede o reenvio de formular
                             'linkimage': data_dict['namelink'],
                             'like': 0,
                             'deslike': 0,
-                            'coment': data_dict['comment'],
+                            'coment': data_dict['comment'].replace('+',' '),
+                            'user': data_dict['user']
                         }
                         Orm(PATHDATABASE).insert_into('posts',custom_post)
 
@@ -58,9 +60,25 @@ def server_post(HOST, PORT, BUFF): #method post que impede o reenvio de formular
                         elif data_dict['typeaction'] == 'comment':
                             del data_dict['typeaction']
                             del data_dict['typeform']
-                            print('oiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
-                            print(data_dict)
                             Orm(PATHDATABASE).insert_into('comentario',data_dict)
+
+                    elif data_dict['typeform'] == '2': # adiciona as açoes like e deslike
+                        del data_dict['typeform']
+                        data_dict['name'] = data_dict['name'].replace('+',' ')
+                        data_dict['email'] = data_dict['email'].replace('%40','@')
+                        print('helo ----------------------')
+                        print(data_dict)
+                        with open('./login/online', 'r') as file:
+                            newuser = json.load(file)
+                            newuser['name'] = data_dict['name']
+                            newuser['email'] = data_dict['email']
+                            
+                        with open('./login/online','w') as file:
+                            formatado = json.dumps(newuser,indent=True)
+                            file.write(formatado)
+
+                       
+                        Orm(PATHDATABASE).insert_into('user',data_dict)
 
 
 
@@ -93,10 +111,13 @@ def server_get(HOST: str, PORT: str, BUFF: str) -> None:
         if method == '/':
             with open('./gitcustomclone.html', 'r') as file:
                 content = file.read()
+            with open('./login/online', 'r') as file:
+                dic_online = json.load(file)
             template = Template(content)
             content = template.render(
                     dados=Orm(PATHDATABASE).select_all("posts")[::-1],
                     dadoscomentar=Orm(PATHDATABASE).select_all("comentario"),
+                    userstatus=dic_online,
             )
             response = (
                 'HTTP/1.1 200 OK\r\n'
@@ -121,6 +142,17 @@ if __name__ == '__main__':
 
     # Cria os diretorios caso nao exista
     makedirs('./db', exist_ok=True)
+    makedirs('./login', exist_ok=True)
+
+    # Cria o aquivo de user que vai estar logado na aplicaçao
+    if not path.isfile('./login/online'):
+        with open('./login/online','w') as file:
+            user_default = {
+                'name': 'Anoinymous',
+                'email': '...'
+            }
+            formatado = json.dumps(user_default,indent=True)
+            file.write(formatado)
 
     # Inicia as threading par o fucionamento de imagem e downloads de
     # arquivos as portas desejadas
@@ -133,13 +165,15 @@ if __name__ == '__main__':
             linkimage TEXT,
             like TEXT,
             deslike TEXT,
-            coment TEXT
+            coment TEXT,
+            user TEXT
         );
     """)
     Orm(PATHDATABASE).query_sql("""
         CREATE TABLE IF NOT EXISTS comentario (
             postid TEXT,
-            comment TEXT
+            comment TEXT,
+            user TEXT
         );
     """)
     Orm(PATHDATABASE).query_sql("""
@@ -152,3 +186,8 @@ if __name__ == '__main__':
  
     while True:
         server_get('localhost', 2001, 1024)
+
+
+
+
+
