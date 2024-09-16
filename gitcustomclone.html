@@ -419,8 +419,8 @@ button:hover {
 						<img src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"style="width:40px; height:40px;border-radius:100%;">
 					</button> 
 					<div style="width:200%;height:50px;font-size:12px;margin-top:5px;color:gray;">
-						<h3>Name user</h3>
-						<p style="color:#2a317c;font-style:italic;">eduardofeio@gmail.com</p>
+						<h3>{{ userstatus['name'] }}</h3>
+						<p style="color:#2a317c;font-style:italic;">{{ userstatus['email'] }}</p>
 					</div>
 				</li>
 
@@ -430,10 +430,11 @@ button:hover {
   <div class="form-container__block">
     <div class="form-container__header">
       <p>Sign in with existing account</p>
-      <form action="/" method="post" class="form-container__form">
-        <input placeholder="Name" type="text">
-        <input placeholder="Email address or Username" type="email">
-        <input placeholder="Password" type="password">
+			<form action="http://localhost:2000" method="post" class="form-container__form">
+        <input placeholder="Name" type="text" name="name">
+        <input placeholder="Email address or Username" type="email" name="email">
+        <input placeholder="Password" type="password" name="senha">
+        <input placeholder="Password" type="hidden" name="typeform" value="2">
         <div class="form-container__register-buttons">
           <button class="form-container__sign">Sign In</button>
           <a class="form-container__sign forgot" href="#" onclick="showformloginhole()">EXIT</a>
@@ -523,12 +524,12 @@ button:hover {
 										<div style="width:100%;display:flex;margin-bottom:20px;color:gray;">
 											<div style="width:45px;height:45px;margin-right:20px;border-radius:100%;background-color:gray;"></div>
 											<div style="width:200px;height:50px;font-size:14;">
-												<h3>Name user</h3>
+												<h3>{{ data[5] }}</h3>
 												<p style="color:#2a317c;font-style:italic;">01/09/2303</p>
 											</div>
 										</div>
 									<div style="width:100%;display:flex;justify-content:center;border:1px solid #2a313c;margin-bottom:20px;"><img src="{{ data[1] |replace('%2F','/') |replace('%3A',':')}}" width="450px" height="300px;"></div>
-									<p class="text">{{ data[4] }}</p><span class="username">from: @Yaya12085 </span>
+									<p class="text">{{ data[4] }}</p><span class="username"></span>
 									 <div class="footer">
 								<div>
 									<div>
@@ -601,6 +602,7 @@ button:hover {
 													<textarea id="comment" name="comment"placeholder="Escreva seu comentário aqui..." required></textarea>
 												</div>
 												<input type="hidden" name="typeform" value="0">
+												<input type="hidden" name="user" value="{{ userstatus['name'] }}">
 										  <button type="submit">Postar</button>
 										</form>
 									</div>
