@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>HTML 5 Boilerplate</title>
+		<title>SITE POST</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet"><!-- emoji --->
 		
@@ -227,7 +227,7 @@ button:hover {
 
 
 /* From Uiverse.io by ahmed150up */ 
-#coment-float .card {
+.coment-float .card {
   width:900px;
 	z-index:0;
   background-color: #fff;
@@ -236,7 +236,7 @@ button:hover {
   padding: 0px;
 }
 
- #coment-float .chat-header {
+ .coment-float .chat-header {
   background-color: #333;
   color: #fff;
   padding: 10px;
@@ -246,25 +246,25 @@ button:hover {
   border-top-right-radius: 5px;
 }
 
- #coment-float .chat-window {
+ .coment-float .chat-window {
   height: 220px;
   overflow-y: scroll;
 }
 
- #coment-float .message-list {
+ .coment-float .message-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
- #coment-float .chat-input {
+ .coment-float .chat-input {
   display: flex;
   align-items: center;
   padding: 10px;
   border-top: 1px solid #ccc;
 }
 
- #coment-float .message-input {
+ .coment-float .message-input {
   flex: 1;
   border: none;
   outline: none;
@@ -272,7 +272,7 @@ button:hover {
   font-size: 14px;
 }
 
- #coment-float .send-button {
+ .coment-float .send-button {
   border: none;
   outline: none;
   background-color: #333;
@@ -282,7 +282,7 @@ button:hover {
   cursor: pointer;
 }
 
- #coment-float .send-button:hover {
+ .coment-float .send-button:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
@@ -294,7 +294,7 @@ button:hover {
 	width:100%;
 	height:90%;
 	background-color:black;
-	opacity:0.6;
+	opacity:1.6;
 	z-index:0;
 	position:absolute;
 	display:flex;
@@ -382,7 +382,7 @@ button:hover {
   height: 2px;
   background: rgb(187, 187, 187);
   bottom: 0;
-  opacity: 0;
+  opacity: 1.0;
 }
 .form-container__sign-app-buttons button:not(:first-child):hover::before {opacity: 1;transition: 1s;}
 .form-container__sign-app-buttons button:not(:first-child):focus::before {opacity: 1;background-color: #4b4b4b;}
@@ -406,6 +406,127 @@ button:hover {
 .form-container__sign-app-buttons button:first-child:focus:not(:active) {outline: none;-webkit-box-shadow: inset 0 0 3px 1px #97dbff;box-shadow: inset 0 0 3px 1px #97dbff;}
 
 /* CLOSE login user */
+
+
+/* CLOSE login-init user */
+#login-init{
+	width:100%;
+	height:100%;
+	background-color:black;
+	z-index:-1;
+	position:absolute;
+	opacity:1.5;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+.form {
+  background-color: #ffffff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.form-title {font-size: 1.25rem;line-height: 1.75rem;font-weight: 600;text-align: center;color: #000;}
+.input-container {position: relative;}
+.input-container input, .form button {outline: none;border: 1px solid #e5e7eb;margin: 8px 0;}
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #4F46E5;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+.signup-link {color: #6B7280;font-size: 0.875rem;line-height: 1.25rem;text-align: center;}
+.signup-link a {text-decoration: underline;}
+/* CLOSE login-init user */
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 1.0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
 	</style>
 	<body>
 
@@ -413,9 +534,46 @@ button:hover {
 
 		<div id="container">
 
+
+
+			<div id="login-init">
+				<form action="http://localhost:2000" method="post" class="form">
+					 <p class="form-title">Sign in to your account</p>
+						<div class="input-container">
+							<input type="text" placeholder="Enter user" name="nome">
+							<span>
+							</span>
+					</div>
+					<div class="input-container">
+							<input type="password" placeholder="Enter password" name="senha">
+						</div>
+        <input placeholder="Password" type="hidden" name="typeform" value="3">
+						 <button type="submit" class="submit">
+						Sign in
+					</button>
+						 <button type="submit" class="submit">Exit</button>
+			 </form>
+			</div>
+
+
+
 			<div id="navtop">
+					<button   style="width:100px; height:30px;display:flex;justify-content:center;align-items:center;margin:5px;position:absolute; margin-left:1250px;margin-top:10px;" onclick="showformloginexists()">Sign in.</button> 
+					<button   style="width:100px; height:30px;display:flex;justify-content:center;align-items:center;margin:5px;position:absolute; margin-left:1100px;margin-top:10px;" onclick="showformlogin()">Sign up.</button> 
+
+				<form action="http://localhost:2000" method="post">
+					<button class="Btn"style="position:absolute; margin-left:200px;margin-top:1px;">
+						<div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+						<div class="text">Logout</div>
+					</button>
+        <input placeholder="Password" type="hidden" name="typeform" value="4">
+			 </form>
+
+
+
+
 				<li style="display:flex;">
-					<button   style="width:40px; height:40px;display:flex;justify-content:center;align-items:center;border-radius:100%;margin:5px;" onclick="showformlogin()">
+					<button   style="width:40px; height:40px;display:flex;justify-content:center;align-items:center;border-radius:100%;margin:5px;">
 						<img src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"style="width:40px; height:40px;border-radius:100%;">
 					</button> 
 					<div style="width:200%;height:50px;font-size:12px;margin-top:5px;color:gray;">
@@ -528,8 +686,13 @@ button:hover {
 												<p style="color:#2a317c;font-style:italic;">01/09/2303</p>
 											</div>
 										</div>
-									<div style="width:100%;display:flex;justify-content:center;border:1px solid #2a313c;margin-bottom:20px;"><img src="{{ data[1] |replace('%2F','/') |replace('%3A',':')}}" width="450px" height="300px;"></div>
-									<p class="text">{{ data[4] }}</p><span class="username"></span>
+									<div style="width:100%;display:flex;justify-content:center;border:1px solid #2a313c;margin-bottom:20px;">
+										{% if  data[1] != '' %}
+											<img src="{{ data[1] |replace('%2F','/') |replace('%3A',':')}}" width="450px" height="300px;">
+										{% else %}
+										{% endif %}
+									</div>
+									<p class="text"></p><span class="username">{{ data[4] }}</span>
 									 <div class="footer">
 								<div>
 									<div>
@@ -539,7 +702,7 @@ button:hover {
 										<form action="http://localhost:2000" method="post">
 											<input type="hidden" name="typeform" value="1">
 											<input type="hidden" name="postid" value="{{ data[0] }}">
-											<input id="sumlikesum1-{{ data[0] }}" type="hidden" name="like">
+											<input id="sumlikesum1-{{ data[0] }}" type="hidden" name="like" value="{{ data[2] }}">
 											<input type="hidden" name="typeaction" value="like">
 											<div style="width:auto;display:flex;justify-content:space-between;">
 												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit">
@@ -552,7 +715,7 @@ button:hover {
 										<form action="http://localhost:2000" method="post">
 											<input type="hidden" name="typeform" value="1">
 											<input type="hidden" name="postid" value="{{ data[0] }}">
-											<input id="sumdeslikesum1-{{ data[0] }}" type="hidden" name="deslike">
+											<input id="sumdeslikesum1-{{ data[0] }}" type="hidden" name="deslike" value="{{ data[3] }}">
 											<input type="hidden" name="typeaction" value="deslike">
 											<div style="width:auto;display:flex;justify-content:space-between;">
 												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit">
@@ -563,10 +726,10 @@ button:hover {
 										</form>
 
 											<div style="width:auto;display:flex;justify-content:space-between;">
-												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit" onclick="showcommetn();">
+												<button style="width:25px;height:25px;display:flex;justify-content:center;align-items:center;"type="submit" onclick="showcommetn({{ data[0] }})">
 													💬
 												</button>
-												<span>0</span>
+												<span></span>
 											</div>
 
 
@@ -595,7 +758,7 @@ button:hover {
 										<form action="http://localhost:2000" method="post">
 											<div class="form-group">
 													<label for="image">Link da imagem</label>
-													<input type="text" id="image" name="namelink"required style="color:blue;">
+													<input type="text" id="image" name="namelink" style="color:blue;">
 												</div>
 												<div class="form-group">
 													<label for="comment">Seu comentário:</label>
@@ -611,20 +774,25 @@ button:hover {
 
 
 
+
 							
-								<div id="coment-float"><!-- OPEN COMENT -->
+					 {% for dataa in dados %}<!-- OPEN COMENT -->
+					 <div id="coment-float{{dataa[0]}}" class="coment-float" style="width:100%;height:92.8%;background-color: rgba(0, 0, 0, 0.8);position:absolute;z-index:0;display:flex;justify-content:center;align-items:center;">
 									<div class="card" id="card-cometn-flaot">
-										<div class="chat-header">Chat<button style="margin-left:400px;" onclick="showcommetnhole();">X</button></div>
+										<div class="chat-header">Chat<button style="margin-left:400px;" onclick="showcommetnhole({{dataa[0]}});">X</button></div>
 											<div class="chat-window">
 												<ul class="message-list">
+					 
 												{% for data in dadoscomentar %}
+												 {% if dataa[0]|int == data[0]|int %}
 													<li style="display:flex;">
 														<div style="width:105px;height:45px;margin-right:20px;border-radius:100%;background-color:gray;margin-bottom:10px;margin-top:10px;margin-left:10px;"></div>
 														<div style="width:200%;height:50px;font-size:14;margin-top:10px;">
-															<h3>Name user</h3>
+															<h3>{{ data[2] }}</h3>
 															<p style="color:#2a317c;font-style:italic;">{{ data[1] }}</p>
 														</div>
 													</li>
+												{% endif %}
 												{% endfor %}
 												</ul>
 											</div>
@@ -633,13 +801,15 @@ button:hover {
 												<form action="http://localhost:2000" method="post">
 													<input type="hidden" name="typeform" value="1">
 													<input type="hidden" name="typeaction" value="comment">
-													<input type="hidden" name="postid" value="99999">
+													<input type="hidden" name="postid" value="{{ dataa[0] }}">
 													<input type="text" class="message-input" placeholder="Type your message here" name="comment">
+													<input type="hidden" name="user" value="{{ userstatus['name'] }}">
 													<button type="submit" class="send-button">Send</button>
 												</form>
 											</div>
 										</div>
 								</div><!-- CLOSE COMENT -->
+						{% endfor %}
 
 
 
@@ -680,18 +850,18 @@ document.getElementById("sumdeslikesum1-{{ data[0] }}").value = document.getElem
 
 
 
-        function showcommetn() {
-            const box1 = document.getElementById('coment-float');
+        function showcommetn(id) {
+					console.log('oioi')
+					const box1 = document.getElementById(`coment-float${id}`);
             const box2 = document.getElementById('card-cometn-flaot');
             // Atribuir novo z-index
             box1.style.zIndex = '1000'; // Aumentar o z-index de box1
             box2.style.zIndex = '1001';  // Diminuir o z-index de box2
         }
-        function showcommetnhole() {
-            const box1 = document.getElementById('coment-float');
+        function showcommetnhole(id) {
+            const box1 = document.getElementById(`coment-float${id}`);
             // Atribuir novo z-index
             box1.style.zIndex = '0'; // Aumentar o z-index de box1
-            box2.style.zIndex = '0';  // Diminuir o z-index de box2
         }
         function showformlogin() {
             const box1 = document.getElementById('login-user');
@@ -700,6 +870,14 @@ document.getElementById("sumdeslikesum1-{{ data[0] }}").value = document.getElem
 				function showformloginhole() {
             const box1 = document.getElementById('login-user');
             box1.style.zIndex = '0'; // Aumentar o z-index de box1
+        }
+				function showformloginexists() {
+            const box1 = document.getElementById('login-init');
+            box1.style.zIndex = '1000'; // Aumentar o z-index de box1
+        }
+				function showformloginexistsexit() {
+            const box1 = document.getElementById('login-init');
+            box1.style.zIndex = '-1'; // Aumentar o z-index de box1
         }
 		</script>
 
