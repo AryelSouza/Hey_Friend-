@@ -46,28 +46,42 @@ def server_post(HOST, PORT, BUFF): #method post que impede o reenvio de formular
 
                     elif data_dict['typeform'] == '1': # adiciona as açoes like e deslike
                         if data_dict['typeaction'] == 'like':
+                            print('erooorrr- ----------------')
+                            print(data_dict)
+
+                            if data_dict['like'] == '':
+                                data_dict['like'] = 1
+                            else:
+                                data_dict['like'] = int(data_dict['like']) + 1
+                            
+
                             Orm(PATHDATABASE).query_sql(f"""
                                 update posts
-                                set like = '{int(data_dict['like']) + 1}'
+                                set like = '{int(data_dict['like'])}'
                                 where postid = '{data_dict['postid']}';
                             """) 
                         elif data_dict['typeaction'] == 'deslike':
+
+                            if data_dict['deslike'] == '':
+                                data_dict['deslike'] = 1
+                            else:
+                                data_dict['deslike'] = int(data_dict['deslike']) + 1
+
                             Orm(PATHDATABASE).query_sql(f"""
                                 update posts
-                                set deslike = '{int(data_dict['deslike']) + 1}'
+                                set deslike = '{int(data_dict['deslike'])}'
                                 where postid = '{data_dict['postid']}';
                             """) 
                         elif data_dict['typeaction'] == 'comment':
                             del data_dict['typeaction']
                             del data_dict['typeform']
+                            data_dict['comment'] = data_dict['comment'] .replace('+', ' ')
                             Orm(PATHDATABASE).insert_into('comentario',data_dict)
 
                     elif data_dict['typeform'] == '2': # adiciona as açoes like e deslike
                         del data_dict['typeform']
                         data_dict['name'] = data_dict['name'].replace('+',' ')
                         data_dict['email'] = data_dict['email'].replace('%40','@')
-                        print('helo ----------------------')
-                        print(data_dict)
                         with open('./login/online', 'r') as file:
                             newuser = json.load(file)
                             newuser['name'] = data_dict['name']
@@ -76,9 +90,37 @@ def server_post(HOST, PORT, BUFF): #method post que impede o reenvio de formular
                         with open('./login/online','w') as file:
                             formatado = json.dumps(newuser,indent=True)
                             file.write(formatado)
-
-                       
                         Orm(PATHDATABASE).insert_into('user',data_dict)
+
+                    elif data_dict['typeform'] == '3': # adiciona as açoes like e deslike
+                        del data_dict['typeform']
+                        data_dict['nome'] = data_dict['nome'].replace('+', ' ')
+                        data_dict['senha'] = data_dict['senha'].replace('+', ' ')
+
+                        if not Orm(PATHDATABASE).exists_element_in_table('user', 'name', data_dict['nome']) and \
+                            not Orm(PATHDATABASE).exists_element_in_table('user', 'senha', data_dict['senha']):
+                            dados = Orm(PATHDATABASE).exists_element_in_table_and_return('user','senha',data_dict['senha'])
+
+                            with open('./login/online', 'r') as file:
+                                newuser = json.load(file)
+                                newuser['name'] = dados[0]
+                                newuser['email'] = dados[1]
+                                
+                            with open('./login/online','w') as file:
+                                formatado = json.dumps(newuser,indent=True)
+                                file.write(formatado)
+
+                    elif data_dict['typeform'] == '4': # adiciona as açoes like e deslike
+                        with open('./login/online', 'r') as file:
+                            newuser = json.load(file)
+                            newuser['name'] =  'Anoinymous'
+                            newuser['email'] = '...'
+                            
+                        with open('./login/online','w') as file:
+                            formatado = json.dumps(newuser,indent=True)
+                            file.write(formatado)
+
+
 
 
 
