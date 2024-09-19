@@ -215,6 +215,23 @@ class Orm:
             return True
         return False 
 
+    def exists_element_in_table_and_return(
+            self,
+            name_table: str,
+            name_column: str,
+            value: str
+        ) -> bool:
+        """Verivica se um elemento existe na tabela,
+        e retorna True ou False
+        """
+        self.cur.execute(f'''
+                SELECT *
+                FROM {name_table}
+                WHERE {name_column} = '{value}'
+        ''')
+        return self.cur.fetchone()
+
+
     def get_counts_for_1_7_30_days_records(
             self,
             name_table: str,
